@@ -1,0 +1,12 @@
+{
+  "datetime": "2025-10-05T21:46:08.829060",
+  "timestamp": "20251005_214608",
+  "files": [
+    "subjects.json",
+    "grades.json",
+    "progress.json",
+    "reminders.json",
+    "user_profile.json"
+  ],
+  "file_count": 5
+}

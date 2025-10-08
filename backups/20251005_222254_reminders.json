@@ -1,0 +1,13 @@
+[
+    {
+        "subject": "社会",
+        "type": "課題",
+        "date": "2025-10-05",
+        "text": "公民",
+        "completed": false,
+        "snoozed_until": null,
+        "is_recurring": true,
+        "recurring_interval": "毎日",
+        "created_at": "2025-10-05 22:17:37"
+    }
+]
