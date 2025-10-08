@@ -1,0 +1,383 @@
+2025-10-05 23:01:30 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-05 23:01:30 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-05 23:02:20 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-05 23:02:20 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-05 23:03:38 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-05 23:03:39 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-05 23:03:48 - INFO - [AUTO_REPORTS] weeklyレポート保存: weekly_report_20251005_230348.txt
+2025-10-05 23:03:50 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-05 23:03:50 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-05 23:09:05 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-05 23:09:05 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-05 23:09:30 - INFO - [CSV_EXPORT] 成績データCSVエクスポート: 9件
+2025-10-05 23:09:30 - INFO - [CSV_EXPORT] 学習時間CSVエクスポート: 3件
+2025-10-05 23:09:30 - INFO - [CSV_EXPORT] 目標データCSVエクスポート: 1件
+2025-10-05 23:10:06 - INFO - [CSV_EXPORT] 成績データCSVエクスポート: 9件
+2025-10-05 23:10:06 - INFO - [CSV_EXPORT] 学習時間CSVエクスポート: 3件
+2025-10-05 23:10:06 - INFO - [CSV_EXPORT] 目標データCSVエクスポート: 1件
+2025-10-05 23:13:45 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-05 23:13:45 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-05 23:14:35 - INFO - [CSV_EXPORT] 成績データCSVエクスポート: 9件
+2025-10-05 23:14:35 - INFO - [CSV_EXPORT] 学習時間CSVエクスポート: 3件
+2025-10-05 23:14:35 - INFO - [CSV_EXPORT] 目標データCSVエクスポート: 1件
+2025-10-05 23:14:47 - INFO - [PLANNING_REMINDER] 学習計画からリマインダー生成: 数学 - 数学_初級への道 (1件)
+2025-10-05 23:31:12 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-05 23:31:12 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-05 23:31:20 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-05 23:31:20 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-05 23:37:30 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-05 23:37:30 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-05 23:40:14 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-05 23:40:14 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-05 23:46:40 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-05 23:46:40 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-05 23:51:58 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-05 23:51:58 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 00:33:05 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 00:33:05 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 10:04:16 - INFO - [PLANNING_REMINDER] 学習計画からリマインダー生成: 数学 - 数学_初級への道 (1件)
+2025-10-06 18:09:56 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 18:09:56 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 18:09:59 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-06 18:09:59 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-06 18:12:15 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 18:12:15 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 18:17:26 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 18:17:26 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 18:49:12 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 18:49:12 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 18:58:58 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 18:58:58 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 19:07:02 - INFO - [PLANNING_REMINDER] 学習計画からリマインダー生成: 数学 - 数学_初級への道 (1件)
+2025-10-06 20:11:34 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 20:11:34 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 20:19:27 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 20:19:27 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 20:21:23 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 20:21:23 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 20:21:35 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-06 20:21:35 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-06 20:21:42 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-06 20:21:42 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-06 20:24:26 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-06 20:24:26 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-06 22:54:34 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 22:54:34 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 22:54:40 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-06 22:54:40 - INFO - [NOTES] ノート読み込み成功: 1件
+2025-10-06 22:56:03 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 22:56:03 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:05:27 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:05:27 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:07:03 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:07:03 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:07:11 - ERROR - [ML_TRAINING_ERROR: 数学] 'numpy.timedelta64' object has no attribute 'days'
+Traceback (most recent call last):
+  File "/Users/hirosetomoki/Documents/AI開発演習ver3.2/ml_grade_prediction.py", line 133, in train
+    df = self.prepare_features(grades_data)
+  File "/Users/hirosetomoki/Documents/AI開発演習ver3.2/ml_grade_prediction.py", line 92, in prepare_features
+    'avg_days_between': self._calculate_avg_interval(past_data['date'].values),
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hirosetomoki/Documents/AI開発演習ver3.2/ml_grade_prediction.py", line 117, in _calculate_avg_interval
+    intervals = [(dates[i+1] - dates[i]).days for i in range(len(dates)-1)]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.timedelta64' object has no attribute 'days'
+2025-10-06 23:08:57 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:08:57 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:11:11 - ERROR - [ML_TRAINING_ERROR: 数学] unconverted data remains when parsing with format "%Y-%m-%d": " 23:10:18", at position 5. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+Traceback (most recent call last):
+  File "/Users/hirosetomoki/Documents/AI開発演習ver3.2/ml_grade_prediction.py", line 138, in train
+    df = self.prepare_features(grades_data)
+  File "/Users/hirosetomoki/Documents/AI開発演習ver3.2/ml_grade_prediction.py", line 53, in prepare_features
+    df['date'] = pd.to_datetime(df['date'])
+                 ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/hirosetomoki/.pyenv/versions/3.13.5/lib/python3.13/site-packages/pandas/core/tools/datetimes.py", line 1072, in to_datetime
+    values = convert_listlike(arg._values, format)
+  File "/Users/hirosetomoki/.pyenv/versions/3.13.5/lib/python3.13/site-packages/pandas/core/tools/datetimes.py", line 435, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "/Users/hirosetomoki/.pyenv/versions/3.13.5/lib/python3.13/site-packages/pandas/core/tools/datetimes.py", line 469, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "pandas/_libs/tslibs/strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": " 23:10:18", at position 5. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-10-06 23:13:03 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:13:03 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:13:10 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-06 23:13:10 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: gradient_boosting)
+2025-10-06 23:13:10 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:15:55 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:15:57 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-06 23:15:57 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: ridge)
+2025-10-06 23:15:57 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:17:23 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:17:23 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:17:30 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:17:32 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-06 23:17:32 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: ridge)
+2025-10-06 23:17:32 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:21:46 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:21:46 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:21:55 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:21:57 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-06 23:21:57 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: ridge)
+2025-10-06 23:21:57 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:17 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:17 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:18 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:19 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:50 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:51 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:51 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:51 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:22:53 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:23:11 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-06 23:23:11 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: ridge)
+2025-10-06 23:23:11 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:25:39 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:25:39 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:25:47 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:25:50 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:29:27 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:29:27 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:30:17 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-06 23:30:17 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-06 23:56:18 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-06 23:56:18 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-06 23:56:37 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:56:39 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-06 23:56:39 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: ridge)
+2025-10-06 23:56:39 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:56:55 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:56:55 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:56:56 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-06 23:57:28 - INFO - [CSV_EXPORT] 成績データCSVエクスポート: 31件
+2025-10-06 23:57:28 - INFO - [CSV_EXPORT] 学習時間CSVエクスポート: 3件
+2025-10-06 23:57:28 - INFO - [CSV_EXPORT] 目標データCSVエクスポート: 1件
+2025-10-06 23:57:32 - INFO - [CSV_EXPORT] 成績データCSVエクスポート: 31件
+2025-10-06 23:57:32 - INFO - [CSV_EXPORT] 学習時間CSVエクスポート: 3件
+2025-10-06 23:57:32 - INFO - [CSV_EXPORT] 目標データCSVエクスポート: 1件
+2025-10-07 00:10:21 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-07 00:10:21 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-07 00:10:34 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:10:36 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-07 00:10:36 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: random_forest)
+2025-10-07 00:10:36 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:10:49 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:11:56 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:12:00 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:15:25 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-07 00:15:25 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-07 00:17:22 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-07 00:17:22 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-07 00:17:32 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:17:34 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-07 00:17:34 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: random_forest)
+2025-10-07 00:17:34 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:17:53 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:18:15 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-07 00:18:15 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-07 00:18:22 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 00:18:26 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 12:54:40 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-07 12:54:40 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-07 12:58:13 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-07 12:58:13 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-07 13:44:01 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 13:44:03 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-07 13:44:03 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: random_forest)
+2025-10-07 13:44:03 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-07 13:44:11 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:09:33 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 15:09:33 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 15:09:47 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:09:49 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-08 15:09:49 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: random_forest)
+2025-10-08 15:09:49 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:10:12 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:10:12 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:10:12 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:11:05 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 15:11:05 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 15:12:01 - INFO - [AUTO_REPORTS] weeklyレポート保存: weekly_report_20251008_151201.txt
+2025-10-08 15:12:24 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-08 15:12:24 - INFO - [TEMPLATES] 成績テンプレート読み込み成功: 1件
+2025-10-08 15:15:37 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:15:43 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-08 15:15:43 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: random_forest)
+2025-10-08 15:15:43 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-08 15:15:43 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: random_forest)
+2025-10-08 15:15:43 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:15:59 - INFO - [CSV_EXPORT] 成績データCSVエクスポート: 31件
+2025-10-08 15:15:59 - INFO - [CSV_EXPORT] 学習時間CSVエクスポート: 3件
+2025-10-08 15:15:59 - INFO - [CSV_EXPORT] 目標データCSVエクスポート: 1件
+2025-10-08 15:17:07 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:17:09 - INFO - [ML_SAVE] モデルを保存しました: ml_models/数学_model.pkl
+2025-10-08 15:17:09 - INFO - [ML_TRAINING] 成績予測モデルを訓練しました: 数学 (ベストモデル: random_forest)
+2025-10-08 15:17:09 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 15:17:16 - INFO - [ML_LOAD] モデルを読み込みました: ml_models/数学_model.pkl
+2025-10-08 19:32:39 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 19:32:39 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 19:37:12 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 19:37:12 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 19:40:36 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 19:40:36 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 19:42:54 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 19:42:54 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 19:45:13 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 19:45:13 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 19:46:45 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 19:46:45 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 19:47:23 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 19:47:23 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 19:48:25 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 19:48:25 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 19:48:36 - ERROR - [AI_API_ERROR] Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}} | Details: model=gpt-5-mini, reasoning_effort=minimal, max_tokens=5000, prompt_length=44
+Traceback (most recent call last):
+  File "/Users/hirosetomoki/Downloads/学習アプリ/kaihatu/ai_config.py", line 149, in get_ai_response
+    response = client.chat.completions.create(
+        model=MODEL_NAME,
+    ...<5 lines>...
+        reasoning_effort=reasoning_effort  # GPT-5-mini用パラメーター
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<46 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}}
+2025-10-08 20:04:01 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:04:01 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:04:10 - ERROR - [AI_API_ERROR] Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}} | Details: model=gpt-5-mini, reasoning_effort=minimal, max_tokens=5000, prompt_length=44
+Traceback (most recent call last):
+  File "/Users/hirosetomoki/Downloads/学習アプリ/kaihatu/ai_config.py", line 149, in get_ai_response
+    response = client.chat.completions.create(
+        model=MODEL_NAME,
+    ...<5 lines>...
+        reasoning_effort=reasoning_effort  # GPT-5-mini用パラメーター
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<46 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}}
+2025-10-08 20:06:03 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:06:03 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:06:12 - ERROR - [AI_API_ERROR] Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}} | Details: model=gpt-5-mini, reasoning_effort=minimal, max_tokens=5000, prompt_length=44
+Traceback (most recent call last):
+  File "/Users/hirosetomoki/Downloads/学習アプリ/kaihatu/ai_config.py", line 149, in get_ai_response
+    response = client.chat.completions.create(
+        model=MODEL_NAME,
+    ...<5 lines>...
+        reasoning_effort=reasoning_effort  # GPT-5-mini用パラメーター
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<46 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}}
+2025-10-08 20:14:38 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:14:38 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:14:50 - ERROR - [AI_API_ERROR] Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}} | Details: model=gpt-5-mini, reasoning_effort=minimal, max_tokens=5000, prompt_length=44
+Traceback (most recent call last):
+  File "/Users/hirosetomoki/Downloads/学習アプリ/kaihatu/ai_config.py", line 149, in get_ai_response
+    response = client.chat.completions.create(
+        model=MODEL_NAME,
+    ...<5 lines>...
+        reasoning_effort=reasoning_effort  # GPT-5-mini用パラメーター
+    )
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py", line 1147, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<46 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'code': '401', 'message': 'Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.'}}
+2025-10-08 20:17:44 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:17:44 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:21:58 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:21:58 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:29:42 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:29:42 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:36:12 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:36:12 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:39:00 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:39:00 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:46:27 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:46:27 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:52:37 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:52:37 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 20:57:35 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 20:57:35 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 21:15:15 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 21:15:15 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 21:15:15 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 21:15:15 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 21:20:35 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 21:20:35 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 21:24:30 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 21:24:30 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 21:30:43 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 21:30:43 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 21:33:37 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 21:33:37 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 21:35:45 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 21:35:45 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-08 21:41:04 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-08 21:41:04 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
