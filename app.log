@@ -381,3 +381,9 @@ openai.AuthenticationError: Error code: 401 - {'error': {'code': '401', 'message
 2025-10-08 21:35:45 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
 2025-10-08 21:41:04 - INFO - [APP_STARTUP] アプリケーションを起動しました
 2025-10-08 21:41:04 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-10 15:10:17 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-10 15:10:17 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
+2025-10-14 12:57:15 - INFO - [APP_STARTUP] アプリケーションを起動しました
+2025-10-14 12:57:15 - INFO - [AUTO_REPORTS] weeklyレポート保存: weekly_report_20251014_125715.txt
+2025-10-14 12:57:15 - INFO - [AUTO_REPORTS] 週次レポート自動生成完了
+2025-10-14 12:57:15 - INFO - [APP_STARTUP] アプリケーションの初期化が完了しました
