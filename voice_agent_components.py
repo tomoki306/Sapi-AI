@@ -6,8 +6,8 @@ render_mini_voice_agent() の機能を分割して保守性を向上
 import os
 import json
 import tempfile
-import time
 import uuid
+import requests
 import streamlit as st
 
 
@@ -35,39 +35,45 @@ def initialize_voice_agent():
 
 
 def get_azure_client():
-    """Azure OpenAI クライアントの取得（複数リソース対応）"""
+    """Azure OpenAI クライアントの取得（音声認識・TTS対応）"""
     try:
         from openai import AzureOpenAI
     except Exception:
         st.warning("openai パッケージが未インストールです。'pip install openai' を実行してください。")
-        return None, None, None, None, None
+        return None, None, None, None, None, None, None
     
     # GPT用クライアント（メインのAzure OpenAI - East US 2）
     GPT_API_KEY = os.getenv("AZURE_OPENAI_KEY")
     GPT_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
     GPT_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-10-21")
     
-    # 音声用クライアント（スウェーデンのAzure OpenAI）
-    VOICE_API_KEY = os.getenv("VOICE_AZURE_OPENAI_KEY")
-    VOICE_ENDPOINT = os.getenv("VOICE_AZURE_OPENAI_ENDPOINT")
+    # 音声認識用クライアント（gpt-4o-mini-transcribe用）
+    VOICE_API_KEY = os.getenv("AZURE_OPENAI_KEY")
+    VOICE_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
     VOICE_API_VERSION = os.getenv("VOICE_AZURE_OPENAI_API_VERSION", "2024-06-01")
+    
+    # TTS用の設定（REST API用）
+    TTS_API_KEY = os.getenv("VOICE_TTS_API_KEY", VOICE_API_KEY)  # 未設定の場合はVOICE_API_KEYを使用
+    TTS_ENDPOINT = os.getenv("VOICE_TTS_ENDPOINT", VOICE_ENDPOINT)  # 未設定の場合はVOICE_ENDPOINTを使用
+    TTS_API_VERSION = os.getenv("VOICE_TTS_API_VERSION", "2025-03-01-preview")
     
     # デバッグ情報（本番環境では削除推奨）
     if not GPT_API_KEY or not GPT_ENDPOINT:
         st.error("❌ GPT用の環境変数が設定されていません！")
         st.info(f"GPT API Key: {'設定済み' if GPT_API_KEY else '未設定'}")
         st.info(f"GPT Endpoint: {GPT_ENDPOINT if GPT_ENDPOINT else '未設定'}")
-        return None, None, None, None, None
+        return None, None, None, None, None, None, None
     
     if not VOICE_API_KEY or not VOICE_ENDPOINT:
-        st.error("❌ 音声用の環境変数が設定されていません！")
+        st.error("❌ 音声認識用の環境変数が設定されていません！")
         st.info(f"Voice API Key: {'設定済み' if VOICE_API_KEY else '未設定'}")
         st.info(f"Voice Endpoint: {VOICE_ENDPOINT if VOICE_ENDPOINT else '未設定'}")
-        return None, None, None, None, None
+        return None, None, None, None, None, None, None
     
     # ⚠️ 末尾スラッシュを削除（Azure OpenAI SDKでは不要）
     GPT_ENDPOINT = GPT_ENDPOINT.rstrip('/')
     VOICE_ENDPOINT = VOICE_ENDPOINT.rstrip('/')
+    TTS_ENDPOINT = TTS_ENDPOINT.rstrip('/') if TTS_ENDPOINT else None
     
     try:
         # GPT用クライアント（East US 2）
@@ -77,7 +83,7 @@ def get_azure_client():
             api_version=GPT_API_VERSION,
         )
         
-        # 音声用クライアント（スウェーデン）
+        # 音声認識用クライアント（gpt-4o-mini-transcribe）
         voice_client = AzureOpenAI(
             api_key=VOICE_API_KEY,
             azure_endpoint=VOICE_ENDPOINT,
@@ -85,14 +91,22 @@ def get_azure_client():
         )
     except Exception as e:
         st.error(f"❌ Azure OpenAI クライアント初期化エラー: {e}")
-        return None, None, None, None, None
+        return None, None, None, None, None, None, None
     
     # デプロイメント名（.envから取得）
     GPT_DEPLOYMENT_NAME = os.getenv("AZURE_OPENAI_MODEL", "gpt-5-mini")
-    TTS_DEPLOYMENT_NAME = os.getenv("VOICE_TTS_DEPLOYMENT_NAME", "tts")
-    STT_DEPLOYMENT_NAME = os.getenv("VOICE_STT_DEPLOYMENT_NAME", "whisper")
+    STT_DEPLOYMENT_NAME = os.getenv("VOICE_STT_DEPLOYMENT_NAME", "gpt-4o-mini-transcribe")
+    TTS_DEPLOYMENT_NAME = os.getenv("VOICE_TTS_DEPLOYMENT_NAME", "gpt-4o-mini-tts")
     
-    return gpt_client, voice_client, GPT_DEPLOYMENT_NAME, TTS_DEPLOYMENT_NAME, STT_DEPLOYMENT_NAME
+    # TTS設定を辞書にまとめる
+    tts_config = {
+        "api_key": TTS_API_KEY,
+        "endpoint": TTS_ENDPOINT,
+        "api_version": TTS_API_VERSION,
+        "deployment_name": TTS_DEPLOYMENT_NAME
+    }
+    
+    return gpt_client, voice_client, GPT_DEPLOYMENT_NAME, STT_DEPLOYMENT_NAME, tts_config
 
 
 def load_json_safe(path: str):
@@ -198,7 +212,7 @@ def handle_voice_input(client, STT_DEPLOYMENT_NAME):
         st.error(f"音声録音コンポーネントエラー: {e}")
         return ""
     
-    # 音声認識処理（改良版）
+    # 音声認識処理（改良版 - 複数形式対応）
     transcribed_text = ""
     
     if audio_bytes and audio_bytes != st.session_state["last_audio_data"]:
@@ -207,33 +221,69 @@ def handle_voice_input(client, STT_DEPLOYMENT_NAME):
         with st.spinner("音声認識中…"):
             tmp_path = None
             try:
-                # デバッグ情報
-                st.info(f"🔍 Whisper デプロイメント名: {STT_DEPLOYMENT_NAME}")
-                st.info(f"🔍 Whisper エンドポイント: {os.getenv('VOICE_AZURE_OPENAI_ENDPOINT', '未設定')}")
+                # audio-recorder-streamlitはWAV形式で録音するため、WAVを最優先
+                formats_to_try = [
+                    (".wav", "audio/wav"),
+                    (".webm", "audio/webm"),
+                    (".mp3", "audio/mpeg"),
+                    (".m4a", "audio/mp4"),
+                ]
                 
-                with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp:
-                    tmp.write(audio_bytes)
-                    tmp_path = tmp.name
+                last_error = None
+                for suffix, mime_type in formats_to_try:
+                    try:
+                        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+                            tmp.write(audio_bytes)
+                            tmp_path = tmp.name
+                        
+                        with open(tmp_path, "rb") as f:
+                            transcription = client.audio.transcriptions.create(
+                                model=STT_DEPLOYMENT_NAME,
+                                file=(f"audio{suffix}", f, mime_type),
+                                response_format="text",
+                            )
+                        
+                        # 成功したらループを抜ける
+                        transcribed_text = transcription if isinstance(transcription, str) else str(transcription)
+                        st.success("✅ 音声認識完了！内容を確認して送信してください。")
+                        break
+                        
+                    except Exception as e:
+                        last_error = e
+                        # 最初の形式（WAV）で失敗した場合のみ警告を表示
+                        if suffix == ".wav":
+                            st.info("🔄 別の形式で試行中...")
+                        if tmp_path and os.path.exists(tmp_path):
+                            try:
+                                os.remove(tmp_path)
+                            except Exception:
+                                pass
+                        tmp_path = None
+                        continue
                 
-                with open(tmp_path, "rb") as f:
-                    transcription = client.audio.transcriptions.create(
-                        model=STT_DEPLOYMENT_NAME,
-                        file=f,
-                        response_format="text",
-                    )
-                
-                transcribed_text = transcription if isinstance(transcription, str) else str(transcription)
-                st.success("✅ 音声認識完了！内容を確認して送信してください。")
+                # すべての形式で失敗した場合
+                if not transcribed_text and last_error:
+                    raise last_error
                 
                 # 録音完了後に自動リセット（新しい録音のために）
-                st.session_state["recorder_session_id"] = str(uuid.uuid4())
-                st.session_state["last_audio_data"] = None
-                st.session_state["last_transcription"] = transcribed_text
+                if transcribed_text:
+                    st.session_state["recorder_session_id"] = str(uuid.uuid4())
+                    st.session_state["last_audio_data"] = None
+                    st.session_state["last_transcription"] = transcribed_text
                 
             except Exception as e:
-                st.error(f"音声認識エラー: {e}")
-                st.write(f"💡 Whisperデプロイメント名: `{STT_DEPLOYMENT_NAME}`")
-                st.write("💡 Azure Portalでデプロイメント名を確認してください")
+                st.error(f"❌ 音声認識エラー: {e}")
+                st.warning("💡 考えられる原因:")
+                st.write("1. 録音時間が短すぎる可能性があります（最低1秒以上録音してください）")
+                st.write("2. マイクの権限が許可されていない可能性があります")
+                st.write("3. 音声データが破損している可能性があります")
+                st.write(f"4. デプロイメント名: `{STT_DEPLOYMENT_NAME}`")
+                st.write("5. Azure Portalでデプロイメント名とAPIキーを確認してください")
+                
+                # デバッグ用: 音声データの先頭バイトを表示
+                if audio_bytes and len(audio_bytes) > 0:
+                    st.write(f"🔍 音声データの先頭: {audio_bytes[:20].hex()}")
+                    
             finally:
                 if tmp_path and os.path.exists(tmp_path):
                     try:
@@ -242,6 +292,69 @@ def handle_voice_input(client, STT_DEPLOYMENT_NAME):
                         pass
     
     return transcribed_text
+
+
+def generate_speech(text: str, tts_config: dict, voice: str = "alloy") -> bytes:
+    """
+    テキストから音声を生成（REST API使用）
+    
+    Args:
+        text: 音声化するテキスト
+        tts_config: TTS設定の辞書（api_key, endpoint, api_version, deployment_name）
+        voice: 使用する音声（alloy, echo, fable, onyx, nova, shimmer）
+    
+    Returns:
+        bytes: 生成された音声データ（MP3形式）、エラー時はNone
+    """
+    if not text or not text.strip():
+        return None
+    
+    # TTS設定の取得
+    api_key = tts_config.get("api_key")
+    endpoint = tts_config.get("endpoint")
+    api_version = tts_config.get("api_version")
+    deployment_name = tts_config.get("deployment_name")
+    
+    if not all([api_key, endpoint, deployment_name]):
+        st.warning("⚠️ TTS設定が不完全です。.envファイルを確認してください。")
+        return None
+    
+    # REST APIエンドポイントURL
+    url = f"{endpoint}/openai/deployments/{deployment_name}/audio/speech?api-version={api_version}"
+    
+    # リクエストヘッダー
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}"
+    }
+    
+    # リクエストボディ
+    payload = {
+        "model": deployment_name,
+        "input": text[:4096],  # 最大4096文字まで
+        "voice": voice
+    }
+    
+    try:
+        # REST APIリクエスト
+        response = requests.post(url, headers=headers, json=payload, timeout=30)
+        
+        if response.status_code == 200:
+            return response.content
+        else:
+            st.error(f"❌ TTS APIエラー: {response.status_code}")
+            st.error(f"詳細: {response.text}")
+            return None
+            
+    except requests.exceptions.Timeout:
+        st.error("❌ TTS API タイムアウト: 30秒以内に応答がありませんでした")
+        return None
+    except requests.exceptions.RequestException as e:
+        st.error(f"❌ TTS API リクエストエラー: {e}")
+        return None
+    except Exception as e:
+        st.error(f"❌ TTS 予期しないエラー: {e}")
+        return None
 
 
 def render_input_ui():
@@ -281,23 +394,16 @@ def handle_text_input(user_text: str, transcribed_text: str) -> str:
 
 def render_send_button():
     """送信UIの表示"""
-    c1, c2, c3 = st.columns([1, 1, 4])
+    c1, c2 = st.columns([1, 4])
     
     with c1:
-        do_tts = st.checkbox(
-            "読み上げ", 
-            value=True,
-            key=f"tts_checkbox_{st.session_state['recorder_session_id']}"
-        )
-    
-    with c2:
         send = st.button(
             "送信", 
             use_container_width=True,
             key=f"send_button_{st.session_state['recorder_session_id']}"
         )
     
-    with c3:
+    with c2:
         # 録音リセットボタン（デバッグ用）
         if st.button("🔄 録音リセット", help="録音ボタンが消えた時に使用"):
             st.session_state["recorder_session_id"] = str(uuid.uuid4())
@@ -306,11 +412,11 @@ def render_send_button():
             st.session_state["last_transcription"] = ""
             st.rerun()
     
-    return send, do_tts
+    return send
 
 
-def generate_ai_response(client, GPT_DEPLOYMENT_NAME, final_input: str):
-    """AI応答の生成"""
+def generate_ai_response(client, GPT_DEPLOYMENT_NAME, final_input: str, tts_config: dict = None):
+    """AI応答の生成とTTS音声生成"""
     # RAG: 現在の質問に関連するJSONを注入
     rag_ctx = build_rag_context(final_input)
     rag_system = {
@@ -330,6 +436,8 @@ def generate_ai_response(client, GPT_DEPLOYMENT_NAME, final_input: str):
         messages_to_send = [rag_system] + base_msgs
     
     ai_reply = None
+    audio_data = None
+    
     with st.spinner("🤖 応答生成中…"):
         try:
             # デバッグ情報を表示
@@ -344,6 +452,14 @@ def generate_ai_response(client, GPT_DEPLOYMENT_NAME, final_input: str):
                 # temperature は推論モデルではサポートされていない（デフォルト値1を使用）
             )
             ai_reply = resp.choices[0].message.content
+            
+            # TTS音声生成
+            if ai_reply and tts_config:
+                with st.spinner("🔊 音声生成中..."):
+                    audio_data = generate_speech(ai_reply, tts_config)
+                    if audio_data:
+                        st.success("✅ 音声生成完了！")
+                    
         except Exception as e:
             st.error(f"応答生成エラー: {e}")
             st.warning("💡 考えられる原因:")
@@ -352,40 +468,7 @@ def generate_ai_response(client, GPT_DEPLOYMENT_NAME, final_input: str):
             st.write("3. APIキーの権限が不足している可能性があります")
             st.write(f"4. 使用しようとしたモデル: `{GPT_DEPLOYMENT_NAME}`")
     
-    return ai_reply
-
-
-def handle_tts(client, TTS_DEPLOYMENT_NAME, ai_reply: str):
-    """TTS（テキスト読み上げ）処理"""
-    try:
-        # デバッグ情報を追加
-        st.info(f"🔍 TTS デプロイメント名: {TTS_DEPLOYMENT_NAME}")
-        st.info(f"🔍 TTS API バージョン: {os.getenv('VOICE_AZURE_OPENAI_API_VERSION', 'デフォルト')}")
-        st.info(f"🔍 TTS エンドポイント: {os.getenv('VOICE_AZURE_OPENAI_ENDPOINT', '未設定')}")
-        
-        with st.spinner("🔊 音声合成中…"):
-            speech = client.audio.speech.create(
-                model=TTS_DEPLOYMENT_NAME,
-                voice="alloy",
-                input=ai_reply,
-            )
-            # 一意のファイル名を使用
-            out_path = f"voice_output_{int(time.time())}_{uuid.uuid4().hex[:8]}.mp3"
-            with open(out_path, "wb") as f:
-                f.write(speech.content)
-            with open(out_path, "rb") as f:
-                st.audio(f.read(), format="audio/mp3")
-            try:
-                os.remove(out_path)
-            except Exception:
-                pass
-    except Exception as e:
-        st.warning(f"🔇 音声合成はスキップされました: {e}")
-        st.error("💡 考えられる原因:")
-        st.write(f"1. TTSデプロイメント名: `{TTS_DEPLOYMENT_NAME}`")
-        st.write(f"2. エンドポイント: `{os.getenv('VOICE_AZURE_OPENAI_ENDPOINT', '未設定')}`")
-        st.write(f"3. APIバージョン: `{os.getenv('VOICE_AZURE_OPENAI_API_VERSION', '未設定')}`")
-        st.write("4. Azure Portalで上記の設定が正しいか確認してください")
+    return ai_reply, audio_data
 
 
 def display_chat_history():
@@ -398,3 +481,24 @@ def display_chat_history():
                 st.markdown(f"**👤 あなた:** {m['content']}")
             elif m["role"] == "assistant":
                 st.markdown(f"**🤖 AI:** {m['content']}")
+
+
+def render_audio_player(audio_data: bytes):
+    """
+    音声プレイヤーの表示
+    
+    Args:
+        audio_data: 音声データ（MP3形式のバイト列）
+    """
+    if audio_data:
+        st.divider()
+        st.caption("🔊 音声再生")
+        st.audio(audio_data, format="audio/mp3")
+        
+        # ダウンロードボタン（オプション）
+        st.download_button(
+            label="📥 音声をダウンロード",
+            data=audio_data,
+            file_name=f"ai_response_{uuid.uuid4().hex[:8]}.mp3",
+            mime="audio/mp3"
+        )

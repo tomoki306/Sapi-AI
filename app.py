@@ -220,7 +220,7 @@ def main():
 
 
 def render_mini_voice_agent():
-    """折りたたみ式のミニ音声チャットエージェント (Azure OpenAI: GPT-4o mini + Whisper + TTS)。
+    """折りたたみ式のミニ音声チャットエージェント (Azure OpenAI: GPT-4o mini + gpt-4o-mini-transcribe + TTS)。
     
     機能を voice_agent_components.py に分割して保守性を向上させました。
     """
@@ -232,20 +232,21 @@ def render_mini_voice_agent():
         handle_text_input,
         render_send_button,
         generate_ai_response,
-        handle_tts,
-        display_chat_history
+        display_chat_history,
+        render_audio_player
     )
     
     with st.expander("ユーザーエージェント（音声チャット）", expanded=False):
-        st.caption("GPT-5-mini + Whisper + TTS（マルチリソース対応）")
+        st.caption("GPT-5-mini + gpt-4o-mini-transcribe + TTS（マルチリソース対応）")
         
         # 初期化
         initialize_voice_agent()
         
-        # Azure クライアントの取得（GPT用とVOICE用を分離）
-        gpt_client, voice_client, GPT_DEPLOYMENT_NAME, TTS_DEPLOYMENT_NAME, STT_DEPLOYMENT_NAME = get_azure_client()
-        if gpt_client is None or voice_client is None:
+        # Azure クライアントの取得（GPT用、音声認識用、TTS用）
+        result = get_azure_client()
+        if result is None or result[0] is None:
             return
+        gpt_client, voice_client, GPT_DEPLOYMENT_NAME, STT_DEPLOYMENT_NAME, tts_config = result
         
         # 入力UI
         col1, col2 = st.columns([1, 1])
@@ -260,22 +261,22 @@ def render_mini_voice_agent():
         final_input = handle_text_input(user_text, transcribed_text)
         
         # 送信UI
-        send, do_tts = render_send_button()
+        send = render_send_button()
         
         # AI応答処理
         if send and final_input and final_input.strip():
             st.session_state["voice_agent_messages"].append({"role": "user", "content": final_input.strip()})
             
-            # AI応答生成（GPTクライアント使用 - East US 2）
-            ai_reply = generate_ai_response(gpt_client, GPT_DEPLOYMENT_NAME, final_input)
+            # AI応答生成 + TTS音声生成（GPTクライアント使用 - East US 2）
+            ai_reply, audio_data = generate_ai_response(gpt_client, GPT_DEPLOYMENT_NAME, final_input, tts_config)
             
             if ai_reply:
                 st.session_state["voice_agent_messages"].append({"role": "assistant", "content": ai_reply})
                 st.success(ai_reply)
                 
-                # TTS処理（VOICEクライアント使用 - スウェーデン）
-                if do_tts:
-                    handle_tts(voice_client, TTS_DEPLOYMENT_NAME, ai_reply)
+                # 音声再生UI
+                if audio_data:
+                    render_audio_player(audio_data)
         
         # チャット履歴表示
         display_chat_history()

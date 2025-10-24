@@ -1,0 +1,49 @@
+# 環境変数（機密情報）
+.env
+
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ログファイル
+*.log
+app.log
+
+# ユーザーデータファイル（JSONファイルに機密情報が含まれる可能性）
+goals.json
+grades.json
+notes.json
+progress.json
+reminders.json
+study_plans.json
+subjects.json
+user_profile.json
+
+# テンプレート設定ファイルは除外しない
+!grade_templates.json
+!report_settings.json
+
+# バックアップフォルダ
+backups/
+
+# MLモデルフォルダ
+ml_models/
+
+# レポートフォルダ
+reports/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/

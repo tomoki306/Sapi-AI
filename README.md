@@ -70,6 +70,8 @@ Sapi-AIは、学習の記録、進捗管理、成績分析、AI支援機能を�
 - **回答分析**: 学習内容の理解度分析
 - **YouTube問題生成**: 動画から自動で問題を生成
 - **学習レポート生成**: AIによる包括的な学習レポート
+- **音声認識（STT）**: 音声入力でAIと対話
+- **音声合成（TTS）**: AI応答を音声で再生
 
 ### ⚙️ データ管理
 - **一括操作**: データの一括インポート・エクスポート
@@ -144,12 +146,17 @@ AZURE_OPENAI_KEY=your_api_key_here
 AZURE_OPENAI_API_VERSION=2024-02-15-preview
 AZURE_OPENAI_MODEL=gpt-4
 
-# 音声機能用の設定（オプション）
+# 音声認識機能用の設定（オプション）
 VOICE_AZURE_OPENAI_ENDPOINT=https://your-voice-resource.openai.azure.com/
 VOICE_AZURE_OPENAI_KEY=your_voice_api_key_here
 VOICE_AZURE_OPENAI_API_VERSION=2024-02-15-preview
-VOICE_TTS_DEPLOYMENT_NAME=tts-1
-VOICE_STT_DEPLOYMENT_NAME=whisper-1
+VOICE_STT_DEPLOYMENT_NAME=gpt-4o-mini-transcribe
+
+# TTS（Text-to-Speech）機能用の設定（オプション）
+VOICE_TTS_API_KEY=your_tts_api_key_here
+VOICE_TTS_ENDPOINT=https://your-tts-endpoint.cognitiveservices.azure.com
+VOICE_TTS_API_VERSION=2025-03-01-preview
+VOICE_TTS_DEPLOYMENT_NAME=gpt-4o-mini-tts
 ```
 
 #### Azure OpenAI APIの取得方法
@@ -171,12 +178,17 @@ AZURE_OPENAI_KEY=your_api_key_here
 AZURE_OPENAI_API_VERSION=2024-02-15-preview
 AZURE_OPENAI_MODEL=gpt-4
 
-# 音声機能用の設定（オプション）
+# 音声認識機能用の設定（オプション）
 VOICE_AZURE_OPENAI_ENDPOINT=https://your-voice-resource.openai.azure.com/
 VOICE_AZURE_OPENAI_KEY=your_voice_api_key_here
 VOICE_AZURE_OPENAI_API_VERSION=2024-02-15-preview
-VOICE_TTS_DEPLOYMENT_NAME=tts-1
-VOICE_STT_DEPLOYMENT_NAME=whisper-1
+VOICE_STT_DEPLOYMENT_NAME=gpt-4o-mini-transcribe
+
+# TTS（Text-to-Speech）機能用の設定（オプション）
+VOICE_TTS_API_KEY=your_tts_api_key_here
+VOICE_TTS_ENDPOINT=https://your-tts-endpoint.cognitiveservices.azure.com
+VOICE_TTS_API_VERSION=2025-03-01-preview
+VOICE_TTS_DEPLOYMENT_NAME=gpt-4o-mini-tts
 EOF
 ```
 

@@ -71,10 +71,8 @@ def validate_env_variables():
 def validate_optional_env_variables():
     """オプションの環境変数のチェック（警告のみ）"""
     optional_vars = {
-        "VOICE_AZURE_OPENAI_KEY": "音声機能用のAPIキー（未設定の場合は通常のキーを使用）",
-        "VOICE_GPT_DEPLOYMENT_NAME": "音声機能用のモデル名",
-        "VOICE_TTS_DEPLOYMENT_NAME": "音声合成用のデプロイメント名",
-        "VOICE_STT_DEPLOYMENT_NAME": "音声認識用のデプロイメント名"
+        "VOICE_STT_DEPLOYMENT_NAME": "音声認識用のデプロイメント名（gpt-4o-mini-transcribe）",
+        "VOICE_TTS_DEPLOYMENT_NAME": "TTS用のデプロイメント名（gpt-4o-mini-tts）"
     }
     
     missing_optional = []
